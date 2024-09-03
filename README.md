@@ -1,73 +1,3 @@
-# nodejs-backend-template
-A boilerplate project designed to kick-start Node.js applications with a structured setup. 
-
-# Node.js Boilerplate
-
-This is a simple Node.js boilerplate with Express, dotenv, ESLint, Prettier, and Mocha for testing.
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js
-- npm
-
-### Installing
-
-1. Clone the repository:
-
-   ```bash
-   git clone <repository-url>
-   cd nodejs-boilerplate
-
-Running the Tests
-npm test
-
-Linting and Formatting
-npm run lint
-npm run format
-
-
-compression
-cookie-parser
-cors
-cron
-helmet
-joi
-lodash
-morgan
-nodemon
-ulid
-winston
-http-errors
-validator
-
-compression: Middleware that compresses response bodies for all requests to decrease the amount of data transmitted to clients. Useful for most Node.js applications to improve performance.
-
-cookie-parser: Middleware to parse cookies attached to the client request object. Useful for applications handling cookies, which is common but not necessary for all Node.js applications.
-
-cors: Middleware to enable Cross-Origin Resource Sharing (CORS) in Node.js applications, allowing resources to be requested from another domain. Essential for applications with front-end clients on different domains.
-
-cron: Library for scheduling jobs to run at specific times or intervals. Useful for applications needing scheduled tasks, such as cleanup scripts or data processing jobs.
-
-helmet: Middleware that helps secure Node.js applications by setting various HTTP headers. Highly recommended for most Node.js applications to enhance security.
-
-joi: Schema description and data validation library for JavaScript. Useful for applications that require robust input validation, which is common in most back-end applications.
-
-lodash: A utility library offering many useful functions for common programming tasks. Useful for most Node.js applications to simplify and enhance JavaScript development.
-
-morgan: HTTP request logger middleware for Node.js. Useful for logging request details, which is beneficial for most applications, especially during development and debugging.
-
-nodemon: Utility that automatically restarts the Node.js application when file changes in the directory are detected. Very useful for development environments but not needed in production.
-
-ulid: Universally Unique Lexicographically Sortable Identifier, a unique ID generator. Useful for applications that need to generate unique IDs, but not necessary for all applications.
-
-winston: Versatile logging library for Node.js. Useful for most applications needing detailed logging beyond simple console outputs.
-
-http-errors: Library for creating HTTP errors with ease. Useful for applications that need standardized error handling, which is common but not required for all applications.
-
-validator: Library for string validation and sanitization. Useful for most applications requiring robust input validation to ensure data integrity and security.
-
 # Node.js Backend Template
 
 This repository provides a boilerplate for building Node.js backend applications with Express, environment configuration, linting, and basic testing setup.
@@ -79,10 +9,10 @@ This repository provides a boilerplate for building Node.js backend applications
 - [Installation](#installation)
 - [Running the Server](#running-the-server)
 - [Environment Variables](#environment-variables)
-- [Project Structure](#project-structure)
-- [Scripts](#scripts)
 - [Testing](#testing)
 - [Linting and Formatting](#linting-and-formatting)
+- [Preloaded packages or libraries](#preloaded-packages-or-libraries)
+- [Potential packages or libraries](#potential-packages-or-libraries)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -92,7 +22,6 @@ This repository provides a boilerplate for building Node.js backend applications
 - Environment variable management using `dotenv`.
 - Code linting with ESLint.
 - Code formatting with Prettier.
-- Basic testing setup with Mocha, Chai, and Supertest.
 - Structured project directories.
 
 ## Prerequisites
@@ -105,14 +34,61 @@ This repository provides a boilerplate for building Node.js backend applications
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/yourusername/nodejs-backend-template.git
+    git clone https://github.com/hasibiqbal207/nodejs-backend-template.git
     cd nodejs-backend-template
     ```
 
-2. **Install dependencies:**
+2. **What to do before using this boilerplate**
+
+- From the ''nodejs-backend-template'' folder, run the following commands to remove all the '.git' files:
 
     ```bash
+    # From Linux based OS | using Terminal
+    find . -name ".git*" -exec rm -rf {} +
+
+    # From Windows based OS | using PowerShell
+    Get-ChildItem -Recurse -Force -Filter ".git*" | Remove-Item -Force -Recurse
+    ```
+
+- Rename the Folder name from 'nodejs-backend-template' to 'project-name' **or** <br /> Copy all the
+    files in the 'project-name' folder.
+    
+- The 'project-name' folder should be tracked with Git. If it's tracked then only add a .gitignore file and add the following lines to .gitignore file:
+ 
+    ```bash
+    node_modules/
+    .env*
+    ```   
+
+- If it's not tracked, run the following command to add it to Git: 
+
+    ```bash
+    git init
+
+    # Add a .gitignore file to ignore all the files in the 'project-name' folder. Add the following lines to .gitignore file:
+    node_modules/
+    .env*
+
+    # Save the changes and then commit the changes:
+    git add .
+    git commit -m "Initial commit"
+    ```
+
+- Change the following attributes in 'package.json' file:
+    ```bash
+    "name": "Change to project-name",
+    "description": "Change to any description",
+    "author": "Change to your name",
+    ```
+
+3. **Install dependencies:**
+    ```bash
     npm install
+    ```
+
+    If you are installing in Production environment, run the following command instead of the above command:
+    ```bash
+    npm install --production
     ```
 
 ## Running the Server
@@ -120,20 +96,86 @@ This repository provides a boilerplate for building Node.js backend applications
 1. **Start the server in development mode:**
 
     ```bash
+    # Start the server with nodemon
     npm run dev
+
+    # Start the server with node
+    npm run start:dev
     ```
 
-2. **Start the server in production mode:**
+2. **Start the server in testing mode:**
 
     ```bash
-    npm start
+    npm run start:test
     ```
 
-The server will be running at `http://localhost:3000`.
+3. **Start the server in production mode:**
 
+    ```bash
+    npm run start:prod
+    ```
+    
+4. **Start the server in staging mode:**
+
+    ```bash
+    npm run start:staging
+    ```
+    
 ## Environment Variables
 
-Copy `.env.example` to `.env` and modify the values as needed:
+This repository contains separate configurations for development, testing, staging, and production. It is advisable to use different environment variables for different environments. 
 
-```bash
-cp .env.example .env
+## Testing
+
+
+## Linting and Formatting
+This repository contains a linter **[ESLint]** and a formatter **[Prettier]**. The linter and formatter are configured to run on the project.
+
+    ```bash
+    npm run lint
+    npm run format
+    ```
+
+## Preloaded packages or libraries
+A small introduction of the preloaded packages or libraries in this repository:
+
+**compression:** Middleware that compresses response bodies for all requests to decrease the amount of data transmitted to clients. Useful for most Node.js applications to improve performance.
+
+**cors:** Middleware to enable Cross-Origin Resource Sharing (CORS) in Node.js applications, allowing resources to be requested from another domain. Essential for applications with front-end clients on different domains.
+
+**Express:** A fast, minimalist web framework for Node.js, used for building web applications and APIs.
+
+**dotenv:** A zero-dependency module that loads environment variables from a .env file into process.env in Node.js.
+
+**helmet:** Middleware that helps secure Node.js applications by setting various HTTP headers. Highly recommended for most Node.js applications to enhance security.
+
+**http-errors:** Library for creating HTTP errors with ease. Useful for applications that need standardized error handling, which is common but not required for all applications.
+
+**morgan:** HTTP request logger middleware for Node.js. Useful for logging request details, which is beneficial for most applications, especially during development and debugging.
+
+**winston:** Versatile logging library for Node.js. Useful for most applications needing detailed logging beyond simple console outputs.
+
+**nodemon:** Utility that automatically restarts the Node.js application when file changes in the directory are detected. Very useful for development environments but not needed in production.
+
+**ESLint:** A configurable linter tool for identifying and fixing JavaScript (and TypeScript) code quality and style issues.
+
+**Prettier:** An opinionated code formatter that enforces a consistent style by parsing your code and reprinting it with its own rules.
+
+## Potential packages or libraries
+A small introduction of the potential packages or libraries that could be used:
+
+**cron:** Library for scheduling jobs to run at specific times or intervals. Useful for applications needing scheduled tasks, such as cleanup scripts or data processing jobs.
+
+**joi:** Schema description and data validation library for JavaScript. Useful for applications that require robust input validation, which is common in most back-end applications.
+
+**lodash:** A utility library offering many useful functions for common programming tasks. Useful for most Node.js applications to simplify and enhance JavaScript development.
+
+**ulid:** Universally Unique Lexicographically Sortable Identifier, a unique ID generator. Useful for applications that need to generate unique IDs, but not necessary for all applications.
+
+**validator:** Library for string validation and sanitization. Useful for most applications requiring robust input validation to ensure data integrity and security.
+
+**cookie-parser:** Middleware to parse cookies attached to the client request object. Useful for applications handling cookies, which is common but not necessary for all Node.js applications.
+
+## Contributing
+
+## License
