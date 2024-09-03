@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import logger from './logger';
 import morgan from 'morgan';
+import helmet from "helmet";
 import path from 'path';
 
 // Determine the environment and load the corresponding .env file
@@ -11,6 +12,9 @@ dotenv.config({ path: path.resolve(__dirname, '..', envFile) });
 
 // Create an Express app
 const app = express();
+
+// Use Helmet!
+app.use(helmet());
 
 const port = process.env.PORT || 3000;
 
@@ -24,7 +28,6 @@ app.use(morgan(morganFormat, {
         url: message.split(' ')[1],
         status: message.split(' ')[2],
         responseTime: message.split(' ')[3],
-
       };
       logger.info(JSON.stringify(logObject));
     }

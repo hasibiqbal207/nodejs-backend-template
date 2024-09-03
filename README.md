@@ -11,10 +11,10 @@ This repository provides a boilerplate for building Node.js backend applications
 - [Environment Variables](#environment-variables)
 - [Testing](#testing)
 - [Linting and Formatting](#linting-and-formatting)
-- [Preloaded packages or libraries](#preloaded-packages-or-libraries)
-- [Potential packages or libraries](#potential-packages-or-libraries)
 - [Contributing](#contributing)
 - [License](#license)
+- [Preloaded packages or libraries](#preloaded-packages-or-libraries)
+- [Potential packages or libraries](#potential-packages-or-libraries)
 
 ## Features
 
@@ -136,6 +136,37 @@ This repository contains a linter **[ESLint]** and a formatter **[Prettier]**. T
     npm run format
     ```
 
+## Contributing
+Please Visit Contributing.md for more details.
+
+## License
+The software in this project is licensed under the Apache License 2.0, a permissive open-source license. By using this software, you agree to the following terms:
+
+**Summary of the Apache License 2.0**
+
+1. **Freedom to Use**: You can use the software for any purpose, including commercial use, without paying royalties.
+2. **Modification and Distribution**: You can modify the software and distribute it in either its original or modified form, as long as you include the original license and clearly mark any changes you made.
+3. **Patent Rights**: The license grants you rights to any patents held by the contributors related to the software, but if you sue anyone over patent issues involving the software, your license and patent rights terminate.
+4. **No Trademark Rights**: The license doesn’t grant permission to use the names, trademarks, or logos of the contributors.
+5. **No Warranty**: The software is provided "as is," without any warranties, meaning the contributors aren't responsible for any issues or damages that arise from using it.
+6. **Optional Support**: If you offer warranties, support, or assume additional liability when redistributing the software, you're responsible for those obligations, not the original contributors.
+
+**Copyright Notice**
+
+    Copyright 2024 Hasib Iqbal
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+        http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
 ## Preloaded packages or libraries
 A small introduction of the preloaded packages or libraries in this repository:
 
@@ -175,7 +206,3 @@ A small introduction of the potential packages or libraries that could be used:
 **validator:** Library for string validation and sanitization. Useful for most applications requiring robust input validation to ensure data integrity and security.
 
 **cookie-parser:** Middleware to parse cookies attached to the client request object. Useful for applications handling cookies, which is common but not necessary for all Node.js applications.
-
-## Contributing
-
-## License
