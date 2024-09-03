@@ -2,16 +2,30 @@
   "name": "nodejs-backend-template",
   "version": "1.0.0",
   "description": "A boilerplate project designed to kick-start Node.js applications with a structured setup.",
-  "main": "index.js",
+  "type": "module",
+  "main": "src/server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "NODE_ENV=development node src/server.js",
+    "start:prod": "NODE_ENV=production node src/server.js",
+    "start:test": "NODE_ENV=testing node src/server.js",
+    "start:staging": "NODE_ENV=staging node src/server.js",
+    "dev": "NODE_ENV=development nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint . --ext .js,.jsx",
+    "format": "prettier --write \"src/**/*.js\""
   },
   "keywords": [],
-  "author": "",
+  "author": "Hasib Iqbal",
   "license": "ISC",
   "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "http-errors": "^2.0.0",
+    "morgan": "^1.10.0",
+    "winston": "^3.13.0"
   },
   "devDependencies": {
     "eslint": "^9.5.0",
