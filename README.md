@@ -137,7 +137,7 @@ This repository contains a linter **[ESLint]** and a formatter **[Prettier]**. T
     ```
 
 ## Contributing
-Please Visit Contributing.md for more details.
+Please Visit [Contributing](CONTRIBUTING.md) file for more details.
 
 ## License
 The software in this project is licensed under the Apache License 2.0, a permissive open-source license. By using this software, you agree to the following terms:
