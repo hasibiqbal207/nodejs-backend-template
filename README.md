@@ -259,12 +259,24 @@ There are still some work left for testing. I will add it soon.
 ## Linting and Formatting
 This repository contains a linter **[ESLint]** and a formatter **[Prettier]**. The linter and formatter are configured to run on the project.
 
-```bash
-# Lint the project. Should be run from the root directory.
+#### Run ESLint to check for issues
+```
 npm run lint
+```
 
-# Format the project
+#### Run ESLint to automatically fix issues
+```
+npm run lint:fix
+```
+
+#### Run Prettier to format your code
+```
 npm run format
+```
+
+#### Run Prettier to check if code is formatted correctly
+```
+npm run format:check
 ```
 
 ## Contributing

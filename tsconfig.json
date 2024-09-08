@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Output ES6 JavaScript (you can change this if you need ES5)
+    "module": "es2022",
+    "moduleResolution": "Node", // Use Node.js style module resolution
+    "rootDir": ".", // The root directory of your TypeScript files
+    "outDir": "./dist", // Output directory for the compiled JavaScript files
+    "strict": true, // Enable strict type-checking options
+    "esModuleInterop": true, // Interop with CommonJS modules for compatibility
+    "skipLibCheck": true, // Skip checking type definitions in libraries
+    "forceConsistentCasingInFileNames": true, // Ensure file names are treated as case-sensitive
+  },
+  "include": [
+    "src/**/*.ts",
+    "config/*.ts"
+  ],
+  "exclude": [
+    "node_modules", // Exclude node_modules folder
+    "dist"
+  ]
+}

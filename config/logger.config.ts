@@ -21,7 +21,8 @@ const logger = createLogger({
     new transports.Console({
       format: consoleLogFormat
     }),
-    // new transports.File({ filename: 'app.log' })
+    // new transports.File({ filename: 'logs/error.log', level: 'error' }), // Log errors to file
+    // new transports.File({ filename: 'logs/combined.log' }), // Log all output to combined.log
   ],
 });
 

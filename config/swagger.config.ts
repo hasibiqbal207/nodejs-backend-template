@@ -1,9 +1,10 @@
-import swaggerJsdoc from "swagger-jsdoc";
+import swaggerJsdoc, {SwaggerDefinition, Options} from "swagger-jsdoc";
 import swaggerUi from "swagger-ui-express";
-import logger from "./logger.config.js";
+import logger from "./logger.config";
+import { Application } from 'express';
 
 // Swagger definition
-const swaggerDefinition = {
+const swaggerDefinition: SwaggerDefinition = {
   openapi: "3.0.0", // You can use '2.0' for older versions
   info: {
     title: "My Node.js API", // Title of the API documentation
@@ -33,15 +34,15 @@ const swaggerDefinition = {
 };
 
 // Options for the swagger-jsdoc
-const options = {
+const options: Options = {
   swaggerDefinition,
-  apis: ["../src/routes/*.js", "../src/models/*.js"], // Path to the API docs (JSDoc comments in your code)
+  apis: ["../src/routes/*.ts", "../src/models/*.ts"], // Path to the API docs (JSDoc comments in your code)
 };
 
 // Initialize swagger-jsdoc
 const swaggerSpec = swaggerJsdoc(options);
 
-function swaggerDocs(app, port) {
+function swaggerDocs(app: Application, port: number) {
   // Swagger page
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
