@@ -2,7 +2,7 @@
 
 This repository provides a boilerplate for building Node.js backend applications with Express, environment configuration, linting, and basic testing setup.
 
-**Note:** To use the TypeScript version of the boilerplate, checkout to branch **main**.
+**Note:** To use the JavaScript version of the boilerplate, checkout to branch **javascript**.
 
 ## Table of Contents
 
