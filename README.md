@@ -285,7 +285,7 @@ Please Visit [Contributing](CONTRIBUTING.md) file for more details.
 ## License
 The software in this project is licensed under the Apache License 2.0, a permissive open-source license. By using this software, you agree to the following terms:
 
-**Summary of the Apache License 2.0**
+**Summary of the [Apache License 2.0](LICENCE)**
 
 1. **Freedom to Use**: You can use the software for any purpose, including commercial use, without paying royalties.
 2. **Modification and Distribution**: You can modify the software and distribute it in either its original or modified form, as long as you include the original license and clearly mark any changes you made.
