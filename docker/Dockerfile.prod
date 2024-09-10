@@ -1,5 +1,5 @@
 # Stage 1: Build the application
-FROM node:20.16.0-alpine AS build
+FROM node:18.12.0-alpine AS build
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -17,7 +17,7 @@ COPY ../ .
 CMD ["npm", "run", "build"]
 
 # Stage 2: Production image
-FROM node:20.16.0-alpine AS production
+FROM node:18.12.0-alpine AS production
 
 # Set working directory in the production image
 WORKDIR /app

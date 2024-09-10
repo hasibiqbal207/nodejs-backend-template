@@ -1,20 +1,16 @@
 import express from "express";
 import dotenv from "dotenv";
-import morgan from "morgan";
 import helmet from "helmet";
 import path from "path";
-import { fileURLToPath } from 'url';
+import { fileURLToPath } from "url";
 
-import logger from "../config/logger.config";
-import swaggerDocs from "../config/swagger.config";
+import swaggerDocs from "../config/swagger.config.js";
+import morganMiddleware from "./middlewares/logger.middleware.js";
 
 // Determine the environment and load the corresponding .env file
 const env = process.env.NODE_ENV || "development";
 const envFile = `.env.${env}`;
-// Convert `import.meta.url` to a file path
 const __filename = fileURLToPath(import.meta.url);
-
-// Get the directory name of the current module
 const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.resolve(__dirname, "..", envFile) });
 
@@ -24,25 +20,11 @@ const app = express();
 // Use Helmet!
 app.use(helmet());
 
-const port: number = parseInt(process.env.PORT || '3000', 10);
+const port: number = parseInt(process.env.PORT || "3000", 10);
 
 // Morgan middleware for logging requests
-const morganFormat = ":method :url :status :response-time ms";
-app.use(
-  morgan(morganFormat, {
-    stream: {
-      write: (message) => {
-        const logObject = {
-          method: message.split(" ")[0],
-          url: message.split(" ")[1],
-          status: message.split(" ")[2],
-          responseTime: message.split(" ")[3],
-        };
-        logger.info(JSON.stringify(logObject));
-      },
-    },
-  })
-);
+app.use(express.json());
+app.use(morganMiddleware);
 
 app.get("/", (req, res) => {
   res.send("Hello World!");
