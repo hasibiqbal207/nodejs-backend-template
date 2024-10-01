@@ -1,13 +1,8 @@
 {
+  "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "target": "ES2022", // Output ES6 JavaScript (you can change this if you need ES5)
-    "module": "ES2022",
-    "moduleResolution": "node", // Use Node.js style module resolution
     "rootDir": "./", // The root directory of your TypeScript files
     "outDir": "./dist", // Output directory for the compiled JavaScript files
-    "strict": true, // Enable strict type-checking options
-    "esModuleInterop": true, // Interop with CommonJS modules for compatibility
-    "skipLibCheck": true, // Skip checking type definitions in libraries
     "forceConsistentCasingInFileNames": true, // Ensure file names are treated as case-sensitive
     "allowSyntheticDefaultImports": true,
   },
@@ -18,9 +13,5 @@
   "exclude": [
     "node_modules", // Exclude node_modules folder
     "dist"
-  ],
-  "ts-node": {
-    // Tell ts-node CLI to install the --loader automatically
-    "esm": true
-  }
+  ]
 }
