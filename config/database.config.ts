@@ -7,9 +7,6 @@ dotenv.config();
 // Define the type for the environment variable
 const MONGODB_URI = process.env.MONGODB_URL; // Explicitly cast MONGODB_URI as string
 
-// Debug log to check if environment variable is loaded
-console.log('Debug - MONGODB_URI:', MONGODB_URI);
-
 // Create a function to connect to MongoDB
 const connectDB = async (): Promise<void> => {
   try {
