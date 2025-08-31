@@ -1,18 +1,15 @@
-import express from "express";
 import dotenv from "dotenv";
+import express from "express";
 import helmet from "helmet";
-import path from "path";
-import { fileURLToPath } from "url";
+import connectDB from "../config/database.config.js";
 
 import swaggerDocs from "../config/swagger.config.js";
 import morganMiddleware from "./middlewares/logger.middleware.js";
 
-// Determine the environment and load the corresponding .env file
-const env = process.env.NODE_ENV || "development";
-const envFile = `.env.${env}`;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-dotenv.config({ path: path.resolve(__dirname, "..", envFile) });
+dotenv.config();
+
+// Connect to the database
+connectDB();
 
 // Create an Express app
 const app = express();
@@ -20,7 +17,7 @@ const app = express();
 // Use Helmet!
 app.use(helmet());
 
-const port: number = parseInt(process.env.PORT || "3000", 10);
+const port: number = parseInt(process.env.PORT || "3060", 10);
 
 // Morgan middleware for logging requests
 app.use(express.json());
